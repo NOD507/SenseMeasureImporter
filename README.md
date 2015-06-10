@@ -1,0 +1,22 @@
+# SenseMeasureImporter
+Import measures from excel or csv file
+
+* List sense apps.
+* Import measures from csv or excel file.
+* Check expressions.
+* Send to sense app.
+
+###TODO
+* Reuse measure definitions. something like Measure1 + Measure2 gets replaced with definitions
+* Add set expressions to measures. 
+
+
+
+
+>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
