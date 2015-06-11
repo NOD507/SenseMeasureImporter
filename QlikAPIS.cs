@@ -26,7 +26,7 @@ namespace SenseMeasureImporter
         {
             var appIdentifier = location.AppWithIdOrDefault(AppId);
 
-            var measure = new NxLibraryMeasureDef() { Def = definition };
+            var measure = new NxLibraryMeasureDef() { Def = definition, Label = title };
 
             var properties = new Qlik.Sense.Client.MeasureProperties()
             {

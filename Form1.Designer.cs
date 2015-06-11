@@ -36,6 +36,11 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnCreateMeasures = new System.Windows.Forms.Button();
+            this.lblFile = new System.Windows.Forms.Label();
+            this.Status = new System.Windows.Forms.Label();
+            this.cmbSheets = new System.Windows.Forms.ComboBox();
+            this.btnConnect = new System.Windows.Forms.Button();
             this.useMeasureDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,11 +48,6 @@
             this.definitionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.validationMessageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aplicacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnCreateMeasures = new System.Windows.Forms.Button();
-            this.lblFile = new System.Windows.Forms.Label();
-            this.Status = new System.Windows.Forms.Label();
-            this.cmbSheets = new System.Windows.Forms.ComboBox();
-            this.btnConnect = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aplicacionBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -132,46 +132,6 @@
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
-            // useMeasureDataGridViewCheckBoxColumn
-            // 
-            this.useMeasureDataGridViewCheckBoxColumn.DataPropertyName = "useMeasure";
-            this.useMeasureDataGridViewCheckBoxColumn.HeaderText = "useMeasure";
-            this.useMeasureDataGridViewCheckBoxColumn.Name = "useMeasureDataGridViewCheckBoxColumn";
-            // 
-            // titleDataGridViewTextBoxColumn
-            // 
-            this.titleDataGridViewTextBoxColumn.DataPropertyName = "title";
-            this.titleDataGridViewTextBoxColumn.HeaderText = "title";
-            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            // 
-            // tagsDataGridViewTextBoxColumn
-            // 
-            this.tagsDataGridViewTextBoxColumn.DataPropertyName = "tags";
-            this.tagsDataGridViewTextBoxColumn.HeaderText = "tags";
-            this.tagsDataGridViewTextBoxColumn.Name = "tagsDataGridViewTextBoxColumn";
-            // 
-            // definitionDataGridViewTextBoxColumn
-            // 
-            this.definitionDataGridViewTextBoxColumn.DataPropertyName = "definition";
-            this.definitionDataGridViewTextBoxColumn.HeaderText = "definition";
-            this.definitionDataGridViewTextBoxColumn.Name = "definitionDataGridViewTextBoxColumn";
-            // 
-            // validationMessageDataGridViewTextBoxColumn
-            // 
-            this.validationMessageDataGridViewTextBoxColumn.DataPropertyName = "validationMessage";
-            this.validationMessageDataGridViewTextBoxColumn.HeaderText = "validationMessage";
-            this.validationMessageDataGridViewTextBoxColumn.Name = "validationMessageDataGridViewTextBoxColumn";
-            // 
-            // aplicacionBindingSource
-            // 
-            this.aplicacionBindingSource.DataSource = typeof(SenseMeasureImporter.measure);
-            // 
             // btnCreateMeasures
             // 
             this.btnCreateMeasures.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -225,6 +185,46 @@
             this.btnConnect.UseVisualStyleBackColor = true;
             this.btnConnect.Visible = false;
             this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
+            // 
+            // useMeasureDataGridViewCheckBoxColumn
+            // 
+            this.useMeasureDataGridViewCheckBoxColumn.DataPropertyName = "useMeasure";
+            this.useMeasureDataGridViewCheckBoxColumn.HeaderText = "useMeasure";
+            this.useMeasureDataGridViewCheckBoxColumn.Name = "useMeasureDataGridViewCheckBoxColumn";
+            // 
+            // titleDataGridViewTextBoxColumn
+            // 
+            this.titleDataGridViewTextBoxColumn.DataPropertyName = "title";
+            this.titleDataGridViewTextBoxColumn.HeaderText = "title";
+            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            // 
+            // tagsDataGridViewTextBoxColumn
+            // 
+            this.tagsDataGridViewTextBoxColumn.DataPropertyName = "tags";
+            this.tagsDataGridViewTextBoxColumn.HeaderText = "tags";
+            this.tagsDataGridViewTextBoxColumn.Name = "tagsDataGridViewTextBoxColumn";
+            // 
+            // definitionDataGridViewTextBoxColumn
+            // 
+            this.definitionDataGridViewTextBoxColumn.DataPropertyName = "definition";
+            this.definitionDataGridViewTextBoxColumn.HeaderText = "definition";
+            this.definitionDataGridViewTextBoxColumn.Name = "definitionDataGridViewTextBoxColumn";
+            // 
+            // validationMessageDataGridViewTextBoxColumn
+            // 
+            this.validationMessageDataGridViewTextBoxColumn.DataPropertyName = "validationMessage";
+            this.validationMessageDataGridViewTextBoxColumn.HeaderText = "validationMessage";
+            this.validationMessageDataGridViewTextBoxColumn.Name = "validationMessageDataGridViewTextBoxColumn";
+            // 
+            // aplicacionBindingSource
+            // 
+            this.aplicacionBindingSource.DataSource = typeof(SenseMeasureImporter.measure);
             // 
             // SenseImporter
             // 
