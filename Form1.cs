@@ -83,6 +83,14 @@ namespace SenseMeasureImporter
                 try
                 {
                     qlik.CheckMeasures(appId, measures);
+                    if (measures.Where(f => f.useMeasure).Count() == 0)
+                    {
+                        btnCheckUncheck.Text = "Check All";
+                    }
+                    else
+                    {
+                        btnCheckUncheck.Text = "Uncheck All";
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -99,6 +107,7 @@ namespace SenseMeasureImporter
         {
             progressBar1.Value = 0;
             Status.Hide();
+            //var taglist = new List<string>();
             List<measure> measures = dataGridView1.DataSource as List<measure>;
             int i = 0;
             if (measures != null)
@@ -154,6 +163,31 @@ namespace SenseMeasureImporter
         private void btnConnect_Click(object sender, EventArgs e)
         {
             Connect();
+        }
+
+        private void btnCheckUncheck_Click(object sender, EventArgs e)
+        {
+            List<measure> measures = dataGridView1.DataSource as List<measure>;
+
+            if (btnCheckUncheck.Text == "Uncheck All" && measures.Where(f => f.useMeasure).Count() > 0)
+            {
+                foreach (var m in measures)
+                {
+                    m.useMeasure = false;
+                }
+                btnCheckUncheck.Text = "Check All";
+            }
+            else
+            {
+                foreach (var m in measures)
+                {
+                    m.useMeasure = true;
+                }
+                btnCheckUncheck.Text = "Uncheck All";
+            }
+
+            dataGridView1.Refresh();
+
         }
     }
 }

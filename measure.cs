@@ -18,6 +18,10 @@ namespace SenseMeasureImporter
         public measure()
         {
             useMeasure = true;
+            title = "";
+            description = "";
+            tags = "";
+            definition = "";
         }
     }
 }

@@ -48,6 +48,7 @@
             this.definitionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.validationMessageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aplicacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnCheckUncheck = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aplicacionBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -146,7 +147,7 @@
             // lblFile
             // 
             this.lblFile.AutoSize = true;
-            this.lblFile.Location = new System.Drawing.Point(401, 9);
+            this.lblFile.Location = new System.Drawing.Point(594, 9);
             this.lblFile.Name = "lblFile";
             this.lblFile.Size = new System.Drawing.Size(26, 17);
             this.lblFile.TabIndex = 8;
@@ -226,11 +227,22 @@
             // 
             this.aplicacionBindingSource.DataSource = typeof(SenseMeasureImporter.measure);
             // 
+            // btnCheckUncheck
+            // 
+            this.btnCheckUncheck.Location = new System.Drawing.Point(454, 24);
+            this.btnCheckUncheck.Name = "btnCheckUncheck";
+            this.btnCheckUncheck.Size = new System.Drawing.Size(117, 23);
+            this.btnCheckUncheck.TabIndex = 12;
+            this.btnCheckUncheck.Text = "Uncheck All";
+            this.btnCheckUncheck.UseVisualStyleBackColor = true;
+            this.btnCheckUncheck.Click += new System.EventHandler(this.btnCheckUncheck_Click);
+            // 
             // SenseImporter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 382);
+            this.Controls.Add(this.btnCheckUncheck);
             this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.cmbSheets);
             this.Controls.Add(this.Status);
@@ -273,6 +285,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tagsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn definitionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn validationMessageDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnCheckUncheck;
     }
 }
 
