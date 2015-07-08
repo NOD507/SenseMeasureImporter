@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Qlik.Engine;
 using Qlik.Sense.Client;
+using System.Threading;
 
 namespace SenseMeasureImporter
 {
@@ -43,21 +44,28 @@ namespace SenseMeasureImporter
             }
         }
 
-        public void CheckMeasures(string AppId, List<measure> measures)
+        public void CheckMeasures(string AppId, List<measure> measures, CancellationTokenSource t)
         {
             string errorMsg, badFields, dangerousFields;
             var appIdentifier = location.AppWithIdOrDefault(AppId);
 
             foreach (var m in measures)
             {
+                if (t.IsCancellationRequested)
+                {
+                    return;
+                }
                 if (m.definition != null)
                 {
                     using (var app = location.App(appIdentifier))
                     {
-                        errorMsg = app.CheckExpression(m.definition).ErrorMsg;
-                        badFields = NxRangeFieldsToString(m.definition, app.CheckExpression(m.definition).BadFieldNames);
-                        dangerousFields = NxRangeFieldsToString(m.definition, app.CheckExpression(m.definition).DangerousFieldNames);
+                        var check = app.CheckExpression(m.definition);
+
+                        errorMsg = check.ErrorMsg;
+                        badFields = NxRangeFieldsToString(m.definition, check.BadFieldNames);
+                        dangerousFields = NxRangeFieldsToString(m.definition, check.DangerousFieldNames);
                     }
+            
 
 
                     m.validationMessage = errorMsg + " " + badFields + "  " + dangerousFields;

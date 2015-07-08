@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,6 +13,7 @@ namespace SenseMeasureImporter
 {
     public partial class SenseImporter : Form
     {
+        private CancellationTokenSource token = new CancellationTokenSource();   
         private int definitionColumnIndex = 4;
         private QlikAPIS qlik;
         private string appId;
@@ -75,14 +77,29 @@ namespace SenseMeasureImporter
                   
         }
 
-        private void checkMeasures()
+        private async void checkMeasures(int index = -1)
         {
-            List<measure> measures = dataGridView1.DataSource as List<measure>;
+            var measures = new List<measure>();
+
+            if (index == -1)
+            {
+                measures = dataGridView1.DataSource as List<measure>;
+            }
+            else
+            {
+                measures.Add((dataGridView1.DataSource as List<measure>)[index]);                
+            }
+
             if (measures != null)
             {
                 try
-                {
-                    qlik.CheckMeasures(appId, measures);
+                {                                   
+                    token.Cancel();
+                    token.Dispose();
+                    token = new CancellationTokenSource();
+          
+                    await Task.Run(() => qlik.CheckMeasures(appId, measures, token));
+                                        
                     if (measures.Where(f => f.useMeasure).Count() == 0)
                     {
                         btnCheckUncheck.Text = "Check All";
@@ -150,7 +167,7 @@ namespace SenseMeasureImporter
         {
             if (e.ColumnIndex == definitionColumnIndex)
             {
-                checkMeasures();
+                checkMeasures(e.RowIndex);
             }
         }
 
